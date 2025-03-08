@@ -12,11 +12,8 @@ export const UseIdExample = () => {
         alignItems: "flex-start",
         gap: "10px",
         fontFamily: "Arial, sans-serif",
-        backgroundColor: "#f8f9fa",
         padding: "20px",
-        borderRadius: "8px",
-        boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-        width:"95%",
+       
         margin: "auto",
       }}
     >

@@ -19,11 +19,7 @@ export const EffectExample = () => {
       style={{
         fontFamily: "Arial, sans-serif",
         padding: "20px",
-        maxWidth: "100%",
         margin: "auto",
-        backgroundColor: "#f8f9fa",
-        borderRadius: "8px",
-        boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
       }}
     >
       <button

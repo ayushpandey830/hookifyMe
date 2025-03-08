@@ -14,7 +14,6 @@ const Home = () => {
                 textAlign: "center",
                 padding: "40px",
                 fontFamily: "Arial, sans-serif",
-                backgroundColor: "#f8f9fa",
                 minHeight: "100vh",
             }}
         >

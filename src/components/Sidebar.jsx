@@ -4,7 +4,7 @@ const sidebarStyle = {
     position: "sticky",
     top: "0",
     left: "0",
-    height: "95vh",
+    height: "calc(100vh - 50px)", // Adjust based on navbar height
     width: "20rem",
     backgroundColor: "#222",
     padding: "20px",
@@ -12,16 +12,19 @@ const sidebarStyle = {
     boxShadow: "2px 0 10px rgba(0, 0, 0, 0.5)",
     overflowY: "auto",
     scrollBehavior: "smooth",
+    display: "flex",
+    flexDirection: "column",
 
-    /* Custom Scrollbar */
+    /* Custom Scrollbar for Firefox */
     scrollbarWidth: "thin",
     scrollbarColor: "#888 #222",
 };
 
-/* For Webkit-based browsers (Chrome, Edge, Safari) */
+
+/* WebKit-based browsers (Chrome, Edge, Safari) */
 const customScrollbar = `
     ::-webkit-scrollbar {
-        width: 8px;
+        width: 10px;
     }
     ::-webkit-scrollbar-track {
         background: #222;
@@ -37,15 +40,14 @@ const customScrollbar = `
 
 const sidebarItemStyle = {
     display: "block",
-    padding: "12px",
+    padding: "14px",
     color: "white",
     textDecoration: "none",
-    borderBottom: "1px solid #444",
+    borderRadius: "5px",
     transition: "background 0.3s, transform 0.2s",
-};
-
-const sidebarItemHover = {
-    backgroundColor: "#444",
+    fontSize: "1rem",
+    fontWeight: "bold",
+    
 };
 
 const Sidebar = () => {
@@ -54,7 +56,7 @@ const Sidebar = () => {
             {/* Inject Custom Scrollbar Styles */}
             <style>{customScrollbar}</style>
 
-            <h2 style={{ textAlign: "center", marginBottom: "20px" }}>Hooks</h2>
+            <h2 style={{ textAlign: "center", marginBottom: "20px" }}>React Hooks</h2>
 
             {[
                 "use-state",
@@ -74,13 +76,13 @@ const Sidebar = () => {
                     key={hook}
                     to={`/${hook}`}
                     style={sidebarItemStyle}
-                    onMouseOver={(e) => {
-                        e.target.style.backgroundColor = sidebarItemHover.backgroundColor;
-                        e.target.style.transform = "scale(1.05)";
+                    onMouseEnter={(e) => {
+                        e.target.style.backgroundColor = "#444";
+                        e.target.style.transform = "translateX(5px)";
                     }}
-                    onMouseOut={(e) => {
+                    onMouseLeave={(e) => {
                         e.target.style.backgroundColor = "transparent";
-                        e.target.style.transform = "scale(1)";
+                        e.target.style.transform = "translateX(0)";
                     }}
                 >
                     {hook.replace("use-", "use").charAt(0).toUpperCase() + hook.replace("use-", "use").slice(1)}

@@ -18,10 +18,8 @@ export const DeferredValueExample = () => {
         alignItems: "center",
         gap: "20px",
         fontFamily: "Arial, sans-serif",
-        backgroundColor: "#f8f9fa",
-        minHeight: "100vh",
         padding: "20px",
-        maxWidth:"100%"
+
       }}
     >
       {/* Search Input */}
